@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <title>UrlShortner</title>
+  </head>
+  <body>
+    <div
+      style="background-image: url(https://source.unsplash.com/1600x900/?japan);"
+    >
+      <div class="container">
+        <h1 style="color:rgb(255, 10, 10)">Url Shrinker</h1>
+        <form action="/shortUrls" method="post" class="my-4 form-inline">
+          <label for="fullUrl" class="sr-only">Url</label>
+          <div style="display: flex;flex-wrap:wrap;justify-content:flex-start;">
+            <input
+              placeholder="URL"
+              required
+              type="url"
+              name="fullUrl"
+              id="fullUrl"
+              class="form-control mr-2"
+              style="width:100vw;margin-bottom:2vh;border-radius:20px;"
+            />
+            <button class="btn btn-success" type="submit">Shrink</button>
+          </div>
+        </form>
+
+        <div style="display: flex;flex-direction:column;flex-wrap:wrap;">
+
+          {{#each shortUrls}}
+            <div
+              style="border-radius:20px;background-color:rgba(255, 255, 255, 0.804);padding:0.8em;display:flex;justify-content:flex-start;margin:2vh;flex-wrap:wrap;"
+            >
+              <div>
+                <span
+                  style="font-weight:bolder;font-style:italic;color:red;"
+                >FullUrl:</span>
+                <a
+                  style="font-size:15px;display:flex;flex-wrap:wrap;width:50vw;margin-right:20vw;margin-bottom:2vh;"
+                  href="{{this.fullUrl}}"
+                ><span
+                    style="word-break:break-word;display:flex;"
+                  >{{this.fullUrl}}</span></a>
+
+              </div>
+
+              <div>
+                <span
+                  style="color:red;font-weight:bolder;font-style:italic;"
+                >ShortUrl:</span>
+                <a
+                  style="display: flex;flex-wrap:wrap;"
+                  href="{{this.shortUrl}}"
+                >{{this.shortUrl}}</a>
+                <span
+                  style="color:red;font-weight:bolder;font-style:italic;"
+                >Clicks:</span>{{this.clicks}}
+              </div>
+            </div>
+
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

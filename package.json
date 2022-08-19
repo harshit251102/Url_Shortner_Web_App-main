@@ -1,0 +1,30 @@
+{
+  "name": "url_shortner_web_app",
+  "version": "1.0.0",
+  "description": "This is a Mern Stack Project which uses react JS, Mongodb, Node Js,Express Js.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gajendra0180/Url_Shortner_Web_App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gajendra0180/Url_Shortner_Web_App/issues"
+  },
+  "homepage": "https://github.com/gajendra0180/Url_Shortner_Web_App#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.5",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
