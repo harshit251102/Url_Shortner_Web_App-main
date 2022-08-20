@@ -1,26 +1,26 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrls");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const app = express();
 
-// mongoose.connect("mongodb://localhost/urlShortner", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
+mongoose.connect("mongodb://localhost/urlShortner", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-dotenv.config({ path: "./config.env" });
+// dotenv.config({ path: "./config.env" });
 
-const DB = process.env.DATABASE
+// const DB = process.env.DATABASE
 
-mongoose
-  .connect(DB)
-  .then(() => {
-    console.log("Connection Successful");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// mongoose
+//   .connect(DB)
+//   .then(() => {
+//     console.log("Connection Successful");
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 app.set("view engine", "hbs");
 app.use(express.urlencoded({ extended: false }));
